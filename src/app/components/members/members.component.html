@@ -1,0 +1,17 @@
+<div class="container">
+  <div >
+    <h3 class="text-center">Member Components</h3>
+  </div>
+  <div class="text-center">
+    <button (click)="getMembers()">Get Member</button>
+  </div>
+
+  <div *ngFor="let m of members">
+    <h6><span>Name: </span>{{m.name}}</h6>
+    <h6><span>Email: </span>{{m.email}}</h6>
+    <h6><span>phoneNumber: </span>{{m.phoneNumber}}</h6>
+    <br>
+  </div>
+
+
+</div>
