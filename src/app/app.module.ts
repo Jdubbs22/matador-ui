@@ -10,11 +10,13 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
     MembersComponent
   ],
-  imports: [
+  imports: [  // use this to import other modules
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+ // declarations: [],  //use this to import components, directives and pipes not assigned to another module
+  providers: [],  // an instruction to the DI system on how to obtain a value for a dependency.
+  // Most of the time, these dependencies are services that you create and provide.
+  bootstrap: [AppComponent]  // entry point fot app code or root
 })
 export class AppModule { }
