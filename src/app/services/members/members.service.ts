@@ -14,7 +14,7 @@ export class MembersService {
   getMembers() {
 
     return new Promise<Member[]>(resolver =>  this.httpClient.get('/api/members')
-      .subscribe((data) => {
+      .subscribe((data: Member[]) => {
         return resolver(data);
       }));
   }
