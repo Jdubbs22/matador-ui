@@ -4,12 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MembersComponent } from './components/members/members.component';
 import {HttpClientModule} from '@angular/common/http';
+import { SessionsComponent } from './sessions/sessions.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MembersComponent
+    MembersComponent,
+    SessionsComponent,
   ],
   imports: [  // use this to import other modules
     BrowserModule,
