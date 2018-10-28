@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MembersService} from '../../services/members/members.service';
-import {HttpClient} from '@angular/common/http';
-import {Member} from './member';
+import {Member} from '../../model/member';
 
 
 

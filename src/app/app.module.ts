@@ -4,7 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MembersComponent } from './components/members/members.component';
 import {HttpClientModule} from '@angular/common/http';
-import { SessionsComponent } from './sessions/sessions.component';
+import { SessionsComponent } from './components/sessions/sessions.component';
+import {AppRouterModule} from './modules/app-router/app-router.module';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
@@ -13,10 +16,13 @@ import { SessionsComponent } from './sessions/sessions.component';
     AppComponent,
     MembersComponent,
     SessionsComponent,
+    HomeComponent,
+    NavbarComponent,
   ],
   imports: [  // use this to import other modules
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRouterModule
   ],
  // declarations: [],  //use this to import components, directives and pipes not assigned to another module
   providers: [],  // an instruction to the DI system on how to obtain a value for a dependency.
