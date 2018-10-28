@@ -15,4 +15,9 @@ export class SessionsComponent implements OnInit {
   ngOnInit() {
   }
 
+  getSessions() {
+    this.sessionsService.getSessions().then(list => {
+      this.sessions = list;
+    });
+  }
 }

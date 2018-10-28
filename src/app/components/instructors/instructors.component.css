@@ -1,0 +1,52 @@
+body, html {
+  padding:0;
+  margin:0;
+}
+* {
+  color:#666;
+}
+.wrapper {
+  max-width:900px;
+  margin:0 auto;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size:28px;
+}
+h2 {
+  font-size:20px;
+}
+h3 {
+  font-size:16px;
+}
+.instructor-img,
+.instructor-page button,
+.mainoptions-page button {
+  display: block;
+  margin:20px auto;
+}
+.newuser-form,
+.userlogin-form {
+  max-width: 500px;
+  margin:20px auto;
+}
+.newuser-form input,
+.userlogin-form input {
+  display: block;
+  width: 100%;
+  margin:0 0 10px 0;
+}
+.newuser-form input[type="submit"],
+.userlogin-form input[type="submit"] {
+  display: block;
+  width: auto;
+  margin:20px auto;
+}

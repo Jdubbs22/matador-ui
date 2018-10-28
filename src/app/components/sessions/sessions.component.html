@@ -1,3 +1,20 @@
 <p>
   sessions works!
 </p>
+<div class="container">
+  <div >
+    <h3 class="text-center">Sessions Components</h3>
+  </div>
+  <div class="text-center">
+    <button (click)="getSessions()">Get Sessions</button>
+  </div>
+
+  <div *ngFor="let s of sessions">
+    <h6><span>Date and time: </span>{{s.date_time}}</h6>
+    <h6><span>Instructor: </span>{{s.instructor}}</h6>
+    <h6><span>Member: </span>{{s.member}}</h6>
+    <br>
+  </div>
+
+
+</div>
