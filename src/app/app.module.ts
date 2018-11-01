@@ -8,6 +8,10 @@ import { SessionsComponent } from './components/sessions/sessions.component';
 import {AppRouterModule} from './modules/app-router/app-router.module';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { InstructorsComponent } from './components/instructors/instructors.component';
+import { CurrentSessionsComponent } from './components/current-sessions/current-sessions.component';
+import { CancelSessionComponent } from './components/cancel-session/cancel-session.component';
+import { InstructorSessionsComponent } from './components/instructor-sessions/instructor-sessions.component';
 
 
 
@@ -18,6 +22,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     SessionsComponent,
     HomeComponent,
     NavbarComponent,
+    InstructorsComponent,
+    CurrentSessionsComponent,
+    CancelSessionComponent,
+    InstructorSessionsComponent,
   ],
   imports: [  // use this to import other modules
     BrowserModule,

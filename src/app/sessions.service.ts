@@ -17,4 +17,11 @@ export class SessionsService {
         return resolver(data);
       }));
   }
+  /*
+  getInstructorSessions() {
+    return new Promise<Session[]>(resolver =>  this.httpClient.get('/api/InstrSessions')
+      .subscribe((data: Session[]) => {
+        return resolver(data);
+      }));
+  }  */
 }
