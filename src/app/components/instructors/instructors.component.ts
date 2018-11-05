@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RestApiService} from '../../services/rest-api.service';
+
 
 @Component({
   selector: 'app-instructors',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstructorsComponent implements OnInit {
 
-  constructor() { }
+  instructors: any;
+  constructor(private restApi: RestApiService) { }
 
   ngOnInit() {
+
+    this.restApi.getInstructorList()
+      .subscribe( data => {
+        this.instructors = data;
+      });
   }
 
 }
