@@ -1,6 +1,23 @@
-<p>
-  current-sessions works!
-</p>
+<div class="container">
+  <div >
+    <h3 class="text-center">Your Current Sessions</h3>
 
 
-<app-cancel-session></app-cancel-session>
+
+  <div *ngFor="let s of sessions">
+    <h6><span>Date and time: </span>{{s.date_time}}</h6>
+    <h6><span>Instructor: </span>{{s.instructor.instrName}}</h6>
+    <h6><span> Session Id: {{s.id}}</span></h6>
+    <br/>
+    <button (click)="cancel(s.id)">Cancel</button>
+    <hr>
+  </div>
+
+
+
+
+
+
+<!--<app-cancel-session></app-cancel-session>-->
+  </div>
+</div>

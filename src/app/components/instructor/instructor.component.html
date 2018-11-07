@@ -1,9 +1,23 @@
 <div>
+  <style>
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
   <img class="instructor-img" [src]="instructor.imageUrl" width="250" height="300">
+
 </div>
+
 <div>
+<div style="text-align: center;">
   {{instructor.description}}
 </div>
+</div>
 <div>
+  <div style="text-align: center;">
   <button (click)="getAvailbility()">Current Availability</button>
 </div>
+</div>
+<br>

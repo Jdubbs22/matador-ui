@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, Observer} from 'rxjs';
 import {Instructor} from '../model/instructor';
 import {Session} from '../model/session';
 import * as http from 'http';
@@ -10,23 +10,24 @@ import * as http from 'http';
 })
 export class RestApiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   getInstructorList(): Observable<Instructor[]> {
     return Observable.create(observer => {
-      this.http.get('/api/instructors')
-        .subscribe( response => {
+      this.httpClient.get('/api/instructors')
+        .subscribe(response => {
           observer.next(response);
           observer.complete();
         });
     });
   }
 
-  getOpenSession(instructorId: Number): Observable<Session[]>{
+  getOpenSession(instructorId: Number): Observable<Session[]> {
     return Observable.create(observer => {
       const url = `/api/sessions/openSession?instructId=${instructorId}`;
-      this.http.get(url)
-        .subscribe( res => {
+      this.httpClient.get(url)
+        .subscribe(res => {
           observer.next(res);
           observer.complete();
         });
@@ -35,10 +36,49 @@ export class RestApiService {
 
 //  :TODO
 //  write function assign member to session
-//  call to '/api/sessions/assignMember? params ..
-//
-  assignMemberToSession(memberId: Number, SessionId: Number){
-  //  const url = ???
-  //  this.http.
+
+  assignMemberToSession(memberId: Number, sessionId: Number): Observable<Session> {
+    return Observable.create(observer => {
+      const url = `/api/sessions/assignMember?sessionId=${sessionId}&memberId=
+      ${1}`;
+      this.httpClient.get(url)
+        .subscribe(res => {
+          observer.next(res);
+          observer.complete();
+        });
+    });
   }
+
+  deleteMemberFromSession( sessionId: Number) {
+    return Observable.create(observer => {
+      const url = `/api/sessions/deleteMember?sessionId=${sessionId}`;
+      this.httpClient.put(url, null)
+        .subscribe(res => {
+          observer.next(res);
+          observer.complete();
+        });
+    });
+  }
+
+  /**
+   * this function return a list of Session for given memberId
+   * @param memberId
+   * return Obsevable of list of Session.
+   */
+  getSessionsByMemberId(memberId: Number): Observable<Session[]> {
+    return Observable.create(observer => {
+      const url = `/api/sessions/memberSession?memberId=${memberId}`;
+      this.httpClient.get(url).subscribe( function (response) {
+        observer.next(response);
+        observer.complete();
+      });
+    });
+  }
+
 }
+
+function f(v) {
+  console.log(v);
+}
+
+const g = (v => console.log(v));

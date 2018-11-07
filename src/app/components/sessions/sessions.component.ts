@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {SessionsService} from '../../sessions.service';
 import {RestApiService} from '../../services/rest-api.service';
 import {ActivatedRoute, Router, Routes} from '@angular/router';
+import {Member} from '../../model/member';
 
 class Sessions {
 }
@@ -18,21 +19,26 @@ export class SessionsComponent implements OnInit {
   sessions: Sessions[] = [];
 
   ngOnInit() {
-    const instrId = this.activatedRoute.snapshot.queryParams['instructorId'];
-    console.log(instrId);
-    this.restApi.getOpenSession(instrId)
-
-      .subscribe( data => {
-
-        this.sessions = data;
-
-      });
+    this.updateSession();
   }
 
   reserve(sessionId: Number) {
     console.log(' I want to reseve session ' + sessionId);
-    // this.restApi.callAssign Member to Session
+   //  this.restApi.callAssign Member to Session
   //  memberId = 1
-  //   this.restApi.assignMemberToSession(1, sessionId);
+     this.restApi.assignMemberToSession(1, sessionId)
+       .subscribe(res => {
+         console.log(res);
+         this.updateSession();
+       });
+  }
+
+
+  updateSession() {
+    const instrId = this.activatedRoute.snapshot.queryParams['instructorId'];
+    this.restApi.getOpenSession(instrId)
+      .subscribe( data => {
+        this.sessions = data;
+      });
   }
 }
