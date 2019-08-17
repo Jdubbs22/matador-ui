@@ -11,7 +11,7 @@ import {Session} from '../model/session';
 export class RestApiService {
 
   constructor(private httpClient: HttpClient) {
-  }
+  }// end constructor
 
   getInstructorList(): Observable<Instructor[]> {
     return Observable.create(observer => {
@@ -21,7 +21,7 @@ export class RestApiService {
           observer.complete();
         });
     });
-  }
+  }// end method
 
   getOpenSession(instructorId: Number): Observable<Session[]> {
     return Observable.create(observer => {
